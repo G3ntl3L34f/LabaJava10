@@ -2,9 +2,9 @@ import java.lang.reflect.Method;
 
 public class Test {
 
-    @MyAnnotation("Привет из аннотации")
+    @MyAnnotation("my annotation")
     public void myMethod() {
-        System.out.println("Метод myMethod выполнен");
+        System.out.println("myMethod done");
     }
 
     public static void main(String[] args) throws Exception {
@@ -13,9 +13,9 @@ public class Test {
         MyAnnotation ann = method.getAnnotation(MyAnnotation.class);
 
         if (ann != null) {
-            System.out.println("Значение аннотации: " + ann.value());
+            System.out.println("Annotation value: " + ann.value());
         } else {
-            System.out.println("Аннотация не найдена");
+            System.out.println("annotation not found");
         }
 
         // Вызов @Deprecated
