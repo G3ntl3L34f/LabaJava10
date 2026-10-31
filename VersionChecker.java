@@ -6,8 +6,6 @@ public class VersionChecker {
 
     public static void main(String[] args) {
         Method[] methods = Software.class.getDeclaredMethods();
-
-        // сортируем по имени, чтобы порядок был стабильный
         Arrays.sort(methods, (a, b) -> a.getName().compareTo(b.getName()));
 
         int withoutAnnotation = 0;
@@ -23,6 +21,6 @@ public class VersionChecker {
             }
         }
 
-        System.out.println("Методов без @Version: " + withoutAnnotation);
+        System.out.println("Methods without @Version: " + withoutAnnotation);
     }
 }
